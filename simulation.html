@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSI Simulation</title>
+    <link rel="stylesheet" href="simulation.css">
+    <link rel="website icon" type="png" href="/osi_1.png">
+  </head>
+  <body>
+    
+    
+    <div id="data" class="string">
+      <div id="layer4_1" class="string">
+          <div id="layer2_1" class="string">
+              <div id="layer1_1"></div>
+              <div id="layer1_2"></div>
+          </div>
+          <div id="layer2_2" class="string">
+              <div id="layer1_3"></div>
+              <div id="layer1_4"></div>
+          </div>
+      </div>
+      <div id="layer4_2" class="string">
+          <div id="layer2_3" class="string">
+              <div id="layer1_5"></div>
+              <div id="layer1_6"></div>
+          </div>
+          <div id="layer2_4" class="string">
+              <div id="layer1_7"></div>
+              <div id="layer1_8"></div>
+          </div>
+      </div>
+      
+  </div>
+  <div class="layer-container">
+  <!-- Sender Layers -->
+  <div class="sender-layer">
+    <div id="application">Application</div>
+    <div>Presentation</div>
+    <div>Session</div>
+    <div>Transport</div>
+    <div>Network</div>
+    <div>Data Link</div>
+    <div>Physical</div>
+  </div>
+
+  <!-- Receiver Layers -->
+  <div class="receiver-layer">
+    <div>Application</div>
+    <div>Presentation</div>
+    <div>Session</div>
+    <div>Transport</div>
+    <div>Network</div>
+    <div>Data Link</div>
+    <div>Physical</div>
+  </div>
+</div>
+
+<div class="layer-name">
+  <div class="sender">Sender</div>
+  <div class="Receiver">Receiver</div>
+</div>
+
+<button onclick="startSimulation()">Start</button>
+
+
+
+<section class="wrapper">
+  <div class="top">OSI Model</div>
+  <div class="bottom" aria-hidden="true">OSI Model</div>
+</section>
+
+    
+    <script src="script.js"></script>
+  </body>
+</html>

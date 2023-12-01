@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSI Model</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="website icon" type="png" href="/osi_1.png">
+  </head>
+  <body>
+    <header class="header-outer">
+      <div class="header-inner responsive-wrapper">
+        <div class="header-logo">
+          <img src="https://assets.codepen.io/285131/acme-2.svg" />
+        </div>
+        <nav class="header-navigation">
+          <a href="index.html">Home</a>
+          <a href="simulation.html">Simulation</a>
+          <a href="developer.html">About Us</a>
+          <button>Menu</button>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main-content responsive-wrapper">
+        <article class="widget">
+            <h2>What is OSI Model? 🌐</h2>
+            <p>
+              The OSI (Open Systems Interconnection) model is a conceptual framework that standardizes the functions of a communication system or a network into seven abstraction layers. Each layer is designed to perform specific tasks and interact with the layers adjacent to it. The model was developed by the International Organization for Standardization (ISO) to provide a common reference for understanding and designing network architectures. Here's an overview of the seven layers:
+            </p>
+            <img src="osi_2.jpg" alt="OSI MODEL">
+            <h2>Seven Layers of OSI Model? 🌐</h2>
+            <p>
+              <strong>Physical Layer:</strong>
+
+Concerned with the physical connection between devices.
+Deals with hardware elements like cables, switches, and network interface cards.
+Defines characteristics such as voltage levels, data rates, and physical connectors.
+           </p>
+            <p>
+              <strong>Data Link Layer:</strong>
+Responsible for creating a reliable link between two directly connected nodes.
+Divided into two sublayers: Logical Link Control (LLC) and Media Access Control (MAC).
+LLC manages flow control and error checking, while MAC deals with access to the physical network medium.
+           </p>
+           <p>
+            <strong>Network Layer:</strong>
+
+            Manages the routing of data packets between different networks.
+            Responsible for logical addressing, such as IP addresses.
+            Routers operate at this layer, making decisions on the most efficient path for data to travel.</p>
+            <p>
+              <p>
+              <strong>Transport Layer:</strong>
+
+Ensures end-to-end communication, providing error detection and correction.
+Manages flow control and data segmentation.
+Examples include TCP (Transmission Control Protocol) and UDP (User Datagram Protocol).</p>
+<p>
+<strong>Session Layer:</strong>
+
+Establishes, maintains, and terminates communication sessions.
+Handles dialog control, allowing communication to be organized into manageable chunks.
+</p>
+<p>
+<strong>Presentation Layer:</strong>
+
+Responsible for data translation, encryption, and compression.
+Ensures that data is presented in a readable format for the application layer.
+</p>
+<p>
+<strong>Application Layer:</strong>
+
+  The topmost layer that interacts directly with end-user applications.
+  Provides network services such as email, file transfer, and remote file access.
+   </p>
+   <h2>Simulation of OSI Model? 🌐</h2>
+          <p>
+            <strong>Senders</strong>
+          </p>
+           <p>
+            Application Layer: Initially, the input string is "abcdefgh." To meet the minimum length of 8, no changes are needed at the application layer
+           </p>
+           <p>
+           Input at Application Layer: "abcdefgh"
+          </p>
+           <p>
+            Presentation Layer: No changes are needed at this layer since the length is already 8.
+
+           </p>
+           <p>
+           Output from Presentation Layer: "abcdefgh"
+          </p>
+           <p>
+            Session Layer: Segment the string into lengths of 4 as per the original scenario.
+
+           </p>
+           <p>
+           Output from Session Layer: "abcd" and "efgh"
+          </p>
+
+           <p>
+            Transport Layer: Perform framing, but now the segments are already of length 4.
+
+           </p>
+
+           <p>
+            Output from Transport Layer: "ab" "cd" "ef" "gh
+           </p>
+
+           <p>
+            Network Layer: Encapsulate the data into frames. Since the length of each segment is already 4, no additional changes are needed.
+
+           </p>
+           
+
+           <p>
+            Output from Network Layer: "a" "b" "c" "d" "e" "f" "g" "h"
+           </p>
+           
+
+           <p>
+            Data Link Layer: Add header and trailer to each frame. Since the length is 4, the frames remain unchanged.
+           </p>
+
+           <p>
+            Output from Data Link Layer: "xay" "xby" "xcy" "xdy" "xey" "xfy" "xgy" "xhy"
+           </p>
+
+           <p>
+            <strong>Receivers</strong>
+          </p>
+
+          <p>
+            Data Link Layer at Receiver: Remove the header and trailer from each frame.
+          </p>
+
+          <p>
+            Input to Data Link Layer at Receiver: "xay" "xby" "xcy" "xdy" "xey" "xfy" "xgy" "xhy"
+
+          </p>
+          <p>
+            Output from Data Link Layer at Receiver: "a" "b" "c" "d" "e" "f" "g" "h"
+
+          </p>
+          <p>
+            Network Layer at Receiver:Changes are made here.
+          </p>
+          <p>
+            Output from Network Layer at Receiver: "ab" "cd" "ef" "gh"
+
+          </p>
+
+          <p>
+            Transport Layer at Receiver: Changes are made here.
+          </p>
+
+          <p>
+            Output from Transport Layer at Receiver: "abcd" "efgh"
+          </p>
+          <p>
+          Session Layer at Receiver: Reassemble the segments.
+        </p>
+          <p>
+            Output from Session Layer at Receiver: "abcd" and "efgh"
+          </p>
+          <p>
+            Presentation Layer at Receiver: No changes are needed here.
+          </p>
+          <p>
+            Output from Presentation Layer at Receiver: "abcdefgh"
+          </p>
+          <p>
+            Application Layer at Receiver: The final processed string remains "abcdefgh."
+          </p>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>
